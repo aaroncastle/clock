@@ -80,7 +80,7 @@ class Clock {
             return previous
         },[])
         // 求出半径内排列元素的最小间距
-        const minSpace = (clientMin - maxSet.reduce((previous,item) => previous + item,0) * 16) / maxSet.length
+        const minSpace = (clientMin - maxSet[maxSet.length - 1]*16 - maxSet.reduce((previous,item) => previous + item,0) * 16) / maxSet.length
         allText.forEach( (item,index) => {
             const time = this.getCurrentTime()
             item[1].forEach((ele,i) => {
